@@ -1,0 +1,9 @@
+
+from itertools import imap
+
+def tieneimpar1 (lista):
+    return any (imap (lambda x: x%2==1, lista))
+
+if __name__ == '__main__':
+    print tieneimpar1 ([2, 2, 2])
+    print tieneimpar1 ([2, 1, 2])

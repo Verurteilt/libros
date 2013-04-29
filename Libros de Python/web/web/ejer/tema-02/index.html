@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-2-orientacion-a-objetos"><em>Tema 2:</em> Orientación a Objetos</h2>
+
+<div class="section" id="clases-y-herencia">
+<h1>Clases y herencia</h1>
+<ol class="arabic">
+<li><p class="first">Tenemos una base de datos de personas de la universidad. En la base
+de datos hay <tt class="docutils literal">personas</tt>, <tt class="docutils literal">profesores</tt> y <tt class="docutils literal">alumnos</tt>. De las
+personas sabes su <tt class="docutils literal">nombre_y_apellidos</tt>. De profesores además
+su <tt class="docutils literal">departamento</tt>, y de los alumnos su <tt class="docutils literal">curso</tt>.</p>
+<p>Escribe un programa que lee un fichero de esta forma:</p>
+<pre class="literal-block">
+numero-de-personas
+tipo-de-persona
+dato-persona-1
+dato-persona-2
+...
+</pre>
+<p>Ejemplo:</p>
+<pre class="literal-block">
+3
+persona
+Pepito Grillo
+alumno
+Ramon Ramirez
+4
+profesor
+Don Importante
+Semiótica Aplicada
+</pre>
+<p>Escribe un programa que recibe como argumentos de la linea de
+comandos el nombre del fichero y un tipo de persona y lista por
+pantalla las personas de ese tipo de la base de datos. Puedes usar
+el siguiente <a class="reference external" href="ejemplo-personas.txt">fichero de ejemplo</a>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que los parámetros de consola están en una lista
+en <tt class="docutils literal">sys.argv</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Crea tres clases <tt class="docutils literal">Persona</tt>, <tt class="docutils literal">Alumno</tt> y <tt class="docutils literal">Profesor</tt>,
+cada una con una funcion <tt class="docutils literal">lee_datos</tt> que lee sus datos. Leemos
+el fichero creando una gran lista.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Una buena forma de organizar el código es que las clases
+<tt class="docutils literal">Alumno</tt> y <tt class="docutils literal">Profesor</tt> hereden de <tt class="docutils literal">Persona</tt>. Su función
+<tt class="docutils literal">lee_datos</tt> delegará parte del trabajo a través de <tt class="docutils literal">super</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p>Para decidir qué tipo de objeto tienes que crear, puedes
+hacer un diccionario que asocie a cada tipo de persona como
+cadena de texto la clase que lo implementa.</p>
+<p class="last">Si eres valiente, puedes ahorrarte ese diccionario usando
+<cite>globals ()</cite>, que devuelve un diccionario con todas las
+variables globales del programa, incluidas clases.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Puedes filtrar el fichero con <tt class="docutils literal">isinstance</tt> o mirando el
+<tt class="docutils literal">__class__</tt> según la semántica que le quieras dar.</p>
+</div>
+<p><a class="reference external" href="personas.py.txt">Solución</a></p>
+</li>
+<li><p class="first">El fichero <a class="reference external" href="error_jerar.py.txt">error_jerar.py</a> contiene una
+jerarquía que da el siguiente error al importarlo o ejecutarlo:</p>
+<pre class="literal-block">
+Traceback (most recent call last):
+  File &quot;error_jerar.py&quot;, line 14, in &lt;module&gt;
+    class D (AB, BA):
+TypeError: Error when calling the metaclass bases
+    Cannot create a consistent method resolution
+order (MRO) for bases A, B
+</pre>
+<p>¿Se te ocurre por qué?</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Intenta calcular en que orden irían los <tt class="docutils literal">super</tt>, es
+decir, el <em>MRO (Method Resolution Order)</em> con las reglas que
+hemos dado en el curso.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="encapsulacion-slots-y-funciones-especiales">
+<h1>Encapsulación, Slots y Funciones especiales</h1>
+<ol class="arabic">
+<li><p class="first">Implementa un esquema de clase <tt class="docutils literal">Racional</tt> que tenga dos
+atributos, <tt class="docutils literal">numerador</tt> y <tt class="docutils literal">denominador</tt> e implemente algunas
+operaciones matemáticas, como los operadores <tt class="docutils literal">+</tt>, <tt class="docutils literal">-</tt>, <tt class="docutils literal">*</tt> y,
+<tt class="docutils literal">/</tt>. Recuerda que en la vida real, usaríamos la clase <a class="reference external" href="http://docs.python.org/library/fractions.html">Fractional</a>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que esos operadores son <tt class="docutils literal">__add__</tt>,
+<tt class="docutils literal">__mul__</tt>, etc...</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que devuelven un nuevo objeto, no modidifican el
+<tt class="docutils literal">self</tt>.</p>
+</div>
+<p><a class="reference external" href="racional.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Añade una propiedad de sólo lectura <tt class="docutils literal">entero</tt> que devuelva el valor
+entero de la clase racional y tire una excepción de tipo
+<tt class="docutils literal">ValueError</tt> si el <tt class="docutils literal">Racional</tt> en cuestión no es un número
+entero.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Define el comportamiento de la propiedad como un método y
+usa <tt class="docutils literal">property (nombre_metodo)</tt> para convertirlo en un
+atributo.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">La sintaxis básica para tirar excepciones es <tt class="docutils literal">raise
+TipoDeExcepción</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">La función <tt class="docutils literal">divmod</tt> puede hacer tu código ligeramente
+más eficiente.</p>
+</div>
+<p><a class="reference external" href="racional2.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Cambia la clase <tt class="docutils literal">Racional</tt> para que use <tt class="docutils literal">slots</tt> para que sea
+y así sea más ligera.</p>
+<p><a class="reference external" href="racional3.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Comprueba con <tt class="docutils literal">%timeit</tt> si ademas tiene alguna ventaja de
+eficiencia temporal el uso de <tt class="docutils literal">__slots__</tt></p>
+</li>
+<li><p class="first">Implementa una clase <tt class="docutils literal">partial</tt> que se pueda usar igual que la
+función <tt class="docutils literal">partial</tt> del módulo <tt class="docutils literal">functools</tt> de la biblioteca
+estándar de Python.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">En esta clase no hace falta tener en cuenta lo que
+dijimos sobre el constructor <tt class="docutils literal">__init__</tt>, ya que no esperamos
+que nadie herede de ella.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Tendrás que definir el la función especial <tt class="docutils literal">__call__</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">El constructor de la clase debe recibir como parámetros
+la función y los parámetros a fijar, y guardar toda esta
+información.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Para recibir y pasar los parámetros necesitarás utilizar
+funciones variádicas, recuerda lo que comentamos de los operadores
+especiales <tt class="docutils literal">*</tt> y <tt class="docutils literal">**</tt>. Tendrás que unir los parámetros
+guardados en la clase con los recibidos en <tt class="docutils literal">__call__</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Puedes unir tuplas sumándolas. Puede unir diccionarios
+con la función <tt class="docutils literal">dict1.update (dict2)</tt>.</p>
+</div>
+<p><a class="reference external" href="partial.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

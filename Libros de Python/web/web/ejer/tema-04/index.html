@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-4-introduccion-a-gtk"><em>Tema 4:</em> Introducción a GTK</h2>
+
+<div class="section" id="interfaces-graficas">
+<h1>Interfaces Gráficas</h1>
+<ol class="arabic">
+<li><p class="first">Escribir un programa gráfico con GTK para jugar al juego en el que
+se esconde una moneda bajo uno de tres vasos opacos. El programa,
+inicialmente, debe mostrar tres botones con el texto &quot;1&quot;, &quot;2&quot;, y
+&quot;3&quot; y una etiqueta que invite al usuario a pulsar uno de los
+botones. Si la elección del usuario coincide con un valor
+pseudoaleatoreo la etiqueta debe mostrar un mensaje de éxito, o
+indicar el fallo en caso contrario. Para simplificar el programa,
+se puede asumir que el usuario puede hacer tantos intentos como sea
+necesario.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa un <tt class="docutils literal">gtk.Button</tt> para los botones y un <tt class="docutils literal">gtk.Label</tt>
+para mostrar los mensajes.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p>Para realizar el <em>layout</em>, puedes crear una <tt class="docutils literal">VBox</tt> y
+una <tt class="docutils literal">HButtonBox</tt>. La jerarquía de <em>widgets</em> puede ser algo
+así:</p>
+<pre class="last literal-block">
+* Win
+  - VBox
+    - Label
+    - HButtonBox
+      - Button
+      - Button
+      - Button
+</pre>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Conecta una señal a cada botón que cambie el mensaje de
+la etiqueta. En la conexión puedes fijar un parámetro que le
+indique al manejador si ese botón es la opción correcta para que
+sepa que texto establecer en la etiqueta. Otra opción es tener
+dos manejadores diferentes para establecer si se ha ganado o se
+ha perdido, y conectar uno a la opción correcta y el otro
+manejador con los botones que reciben la opción incorrecta.</p>
+</div>
+<p><a class="reference external" href="juego.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Reescribir el programa de la calculadora que desarrollamos en el
+tema de programación funcional utilizando una interfaz en GTK. El
+widget <a class="reference external" href="http://www.pygtk.org/docs/pygtk/class-gtkentry.html">gtk.TextEntry</a> que no
+hemos visto en las diapositivas puede ser de utilidad.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">La <tt class="docutils literal">gtk.Entry</tt> tiene señal <tt class="docutils literal">activate</tt> que es emitida cuando
+el usuario pulsa la tecla <em>intro</em>, puedes usarla para disparar
+el cálculo.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Establece un manejador que realizar el cálculo conectado
+al cálculo. El código para realizar el cálculo muy parecido a la
+versión por consola, sólo que el texto debe extraerse de la
+propiedad <tt class="docutils literal">text</tt> del <tt class="docutils literal">gtk.Entry</tt>, y el resultado debe
+almacenarse en el <tt class="docutils literal">label</tt> de la <tt class="docutils literal">gtk.Label</tt>.</p>
+</div>
+<p><a class="reference external" href="calcu.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Modifica el programa anterior para que calcule con cualquier
+expresión válida de Python. Utiliza para ello la función <a class="reference external" href="http://docs.python.org/library/functions.html#eval">eval</a> de
+Python. Esta función puede ocasionar problemas usada
+descuidadamente, <a class="reference external" href="http://lybniz2.sourceforge.net/safeeval.html">este artículo</a> puede darte
+pistas de cómo utilizar esa función de forma segura.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Aunque normalmente está contraindicado capturar
+<tt class="docutils literal">Exception</tt>, porque podríamos ocultar errores de programación,
+es correcto capturar <tt class="docutils literal">Exception</tt> justo alderredor de la
+llamada a <tt class="docutils literal">eval</tt> para</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Toma directamente la cadena del usuario y envíasela a
+<tt class="docutils literal">eval</tt>, el resultado lo conviertes en una cadena con <tt class="docutils literal">str</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Pasale a <tt class="docutils literal">eval</tt> un segundo parámetro con un diccionario
+asociando los nombres de funciones permitidas a las funciones
+que las ejecutan. De lo contrario el usuario podría invocar a
+funciones peligrosas.</p>
+</div>
+<p><a class="reference external" href="calcu2.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+from ctypes import *
+from ctypes.util import find_library
+
+_lib = cdll.LoadLibrary (find_library ('c'))
+
+def arrsort (arr):
+    cmpfunc = CFUNCTYPE (c_int, POINTER (c_int), POINTER (c_int))
+    @cmpfunc
+    def mycmp (a, b):
+        return cmp (a[0], b[0])
+    

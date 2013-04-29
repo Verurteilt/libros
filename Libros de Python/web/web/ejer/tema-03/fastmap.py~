@@ -1,0 +1,9 @@
+
+from contextlib import contextmanager
+
+from itertools import imap
+
+@contextmanager
+def fastmap ():
+    origmap = __builtins__.map
+     __builtins__.map

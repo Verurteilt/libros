@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-5-disenando-con-glade"><em>Tema 5:</em> Diseñando con Glade</h2>
+
+<div class="section" id="mejoras-en-gfits">
+<h1>Mejoras en GFits</h1>
+<p>Los ejercicios de esta sección son mejoras sobre el programa GFits que
+hemos visto durante las clases del curso. Puedes descargarte el código
+fuente de la versión inicial de la web de material del curso.</p>
+<p><em>Las soluciones de esta relación se encuentran todas implementadas en
+la carpeta ``gfits2`` del código fuente del tema 5 en la sección de
+recursos.</em></p>
+<ol class="arabic">
+<li><p class="first">Cambia la vista de las tablas del fichero FITS para que se puedan
+ordenar los datos por una columna y se pueda redimensionar el
+tamaño del campo.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Todo el código que tienes que modificar está en el
+la clase <tt class="docutils literal">FitsTablePage</tt> en el fichero <tt class="docutils literal">src/doc.py</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Utiliza la propiedad <tt class="docutils literal">resizable</tt> y el método
+<tt class="docutils literal">set_sort_column_id</tt> de la clase <tt class="docutils literal">TreeViewColumn</tt></p>
+</div>
+</li>
+<li><p class="first">Añade un díalogo <tt class="docutils literal">about</tt> que muestre información general sobre el
+programa. Se recomienda crear definir el diálogo con Glade.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Crea un nuevo fichero de interfaz <tt class="docutils literal">src/gui/about.glade</tt>
+con el diálogo de tipo <tt class="docutils literal">about</tt>.  Hay muchos campos que puedes
+editar.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Conecta un manejador con la señal <tt class="docutils literal">activate</tt> del botón
+adecuado del menú en <tt class="docutils literal">src/gui/main.glade</tt>. Recuerda que en la
+lista de objetos puedes pulsar botón derecho y <tt class="docutils literal">Edit</tt> para
+acceder a los elementos del menú y sus señales.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">El el manejador, carga el fichero de interfaz con
+<tt class="docutils literal">gtk.Builder</tt>, busca el objeto del diálogo, invoca <tt class="docutils literal">run ()</tt>
+y recuerda destruirlo finalmente.</p>
+</div>
+</li>
+<li><p class="first">Añade una barra de navegación estándar de Matplotlib para asistir
+la visualización de la imagen.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Todo el código que tienes que modificar está en el
+constructor de <tt class="docutils literal">FitsImagePage</tt> en el fichero <tt class="docutils literal">src/doc.py</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Aunque el segundo parámetro de la <tt class="docutils literal">NavigationToolbar</tt>
+parezca ser una ventana, basta con que establezcas el padre que
+del objeto.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">El objeto del fichero de interfaz en Glade
+<tt class="docutils literal"><span class="pre">image-container</span></tt> es ya de tipo <tt class="docutils literal">gtk.VBox</tt>, puedes
+simplemente usar <tt class="docutils literal">pack_start</tt>, asegurándote de pasarle los
+parámetros correctos según lo descrito en el curso.</p>
+</div>
+</li>
+<li><p class="first">La función <tt class="docutils literal">imshow ()</tt> de un <a class="reference external" href="http://matplotlib.sourceforge.net/api/axis_api.html">matplotlib.axis.Axis</a> que usamos
+para representar la imagen puede usar diferentes funciones para
+mapear los valores de la matriz a píxeles de colores. Ahora, por
+defecto, se utiliza <tt class="docutils literal">matplotlib.cm.gray</tt>. La lista completa de
+opciones disponibles <a class="reference external" href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.colormaps">la tienes aquí</a>. Añade
+la posibilidad de cambiar la función utilizada con un menú
+desplegable en la barra de herramientas principal.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><tt class="docutils literal">matplotlib.cm.cmap_d</tt> es un diccionario que contiene
+todos los mapas de color disponibles en Matplotlib.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Todo el código que tienes que modificar está en el
+la clase <tt class="docutils literal">FitsImagePage</tt> en el fichero <tt class="docutils literal">src/doc.py</tt> y el
+fichero glade <tt class="docutils literal">src/gui/primary.glade</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">La barra de herramientas principal es el objeto
+<tt class="docutils literal"><span class="pre">primary-toolbar</span></tt> en el fichero <tt class="docutils literal">primary.glade</tt>, añade otro
+<tt class="docutils literal">ComboBox</tt> de forma similar al que ya hay. Es un elemento de
+la barra herramientas de tipo <em>especial</em>, lo cual te provee un
+hueco en el que puedes añadir directamente el <em>widget</em> que te de
+la gana.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Glade no es capaz de editar la lista de opciones del
+<tt class="docutils literal">ComboBox</tt> directamente cuando trabajamos en formato
+<tt class="docutils literal">GtkBuilder</tt>, por lo que tendrás que llenarlo desde el
+código. Dale un nombre significativo al objeto para obtenerlo
+del documento. Puedes inspirarte para ver como llenar el objeto
+con el código que maneja el otro <tt class="docutils literal">ComboBox</tt> del menú.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Te puede ser muy útil hacer que las opciones del
+<tt class="docutils literal">ComboBox</tt> coincidan con los nombres de los mapas de color,
+así basta con que utilices la función <tt class="docutils literal">get_active_text</tt> para
+obtener la opción seleccionada y obtener el mapa de color
+finalmente con <tt class="docutils literal">matplotlib.cm.get_cmap</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Conecta un manejador a la señal <tt class="docutils literal">changed</tt> del
+<tt class="docutils literal">ComboBox</tt>. Ahí puedes comprobar que opción ha sido
+seleccionara y repintar la interfaz.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

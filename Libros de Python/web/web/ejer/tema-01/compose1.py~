@@ -1,0 +1,7 @@
+
+def compose (*funcs):
+    def compuesta (x):
+        for f in reversed (funcs):
+            x = f (x)
+        return x
+    return compuesta

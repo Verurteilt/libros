@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-3-cuestiones-avanzadas"><em>Tema 3:</em> Cuestiones Avanzadas</h2>
+
+<div class="section" id="iteradores-y-generadores">
+<h1>Iteradores y Generadores</h1>
+<ol class="arabic">
+<li><p class="first">Implementa nuestra amada función que calcula la lista con los
+productos de los elementos de dos listas sin utilizar el operador
+corchete, ni bucles <tt class="docutils literal">for</tt> ni comprensión de listas, ni <tt class="docutils literal">zip</tt>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Obtén un iterador de por cada lista con la función
+<tt class="docutils literal">iter</tt>. Avanza los iteradores con <tt class="docutils literal">next ()</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Comprueba que ha terminado el bucle capturando la
+excepción <tt class="docutils literal">StopIteration</tt>.</p>
+</div>
+<p><a class="reference external" href="productoiter.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa un generador <tt class="docutils literal">sucesos (probabilidad)</tt> que produce una
+secuencia infinita de valores booleanos pseudoaletoreos con
+<tt class="docutils literal">probabilidad</tt> de que sean <tt class="docutils literal">True</tt>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Utiliza la función <tt class="docutils literal">random.random ()</tt> para generar un
+número pseudo-aleatoreo entre 0.0 y 1.0 una distribución uniforme.</p>
+</div>
+<p><a class="reference external" href="sucesos.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa el ejercicio 2 del apartado <em>Funciones de Alto Orden</em>
+del tema 1 utilizando las funciones de <tt class="docutils literal">itertools</tt>. Esa función,
+recordemos, devolvía <tt class="docutils literal">True</tt> si algún elemento contiene algún
+número par y <tt class="docutils literal">False</tt> en caso contrario.</p>
+<p><a class="reference external" href="tienepar.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa un generador <tt class="docutils literal">fibonacci</tt> que produce los diferentes de
+la secuencia de Fibonacci, que tiene la forma:</p>
+<pre class="literal-block">
+0, 1, 1, 2, 3, 5, 8, 13, ...
+</pre>
+<p>Cuyos dos primeros valores son 0 y 1 por definición y el resto se
+calculan sumando los dos últimos valores de la sucesión.</p>
+<p><a class="reference external" href="fib.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Compara la eficiencia de la función del ejercicio 3 con la
+desarrollada en el tema 1. Para ello, será útil definir una función
+<tt class="docutils literal">algunospares (n, p)</tt> que devuelve una lista de <em>n</em> números dónde
+cada número tiene una probabilidad <em>p</em> de ser par, basándote en la
+función <tt class="docutils literal">sucesos</tt>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Te será de útil usar la función <tt class="docutils literal">itertools.imap</tt> para
+convertir los sucesos en enteros.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Te será útil la función <tt class="docutils literal">itertools.islice</tt>.</p>
+</div>
+<p><a class="reference external" href="algunospares.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa un generador <tt class="docutils literal">primos</tt> que genere todos los números
+primos. Por eficiencia, el generador debe ir almacenando los primos
+encontrados hasta el momento en una lista.</p>
+<p><a class="reference external" href="primos.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="decoradores">
+<h1>Decoradores</h1>
+<ol class="arabic">
+<li><p class="first">Implementa un decorador <tt class="docutils literal">unarygen</tt>, que convierte cualquier
+función unaria <em>f</em> en un generador que recibe como parámetro un
+valor inicial <tt class="docutils literal">inic</tt> y modele la secuencia:</p>
+<pre class="literal-block">
+inic, f(inic), f(f(inic)), f(f(f(inic))), ...
+</pre>
+<p>Por ejemplo, el siguiente código:</p>
+<pre class="literal-block">
+&#64;unarygen
+def dedosendos (n):
+    return n + 2
+
+for x in dedosendos (0):
+    print x
+</pre>
+<p>Produce la salida:</p>
+<blockquote>
+<p>0
+2
+4
+...</p>
+</blockquote>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Define un generador dentro de <tt class="docutils literal">unarygen`</tt> que llama a
+la función de fuera en un bucle infinito, haciendo <tt class="docutils literal">yield</tt> de los
+sucesivos valores que va produciendo.</p>
+</div>
+<p><a class="reference external" href="unarygen.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Define una operación <tt class="docutils literal">potencia (op, val, n)</tt> que calcula la
+<em>n</em>-ésima potencia de un valor <em>val</em> sobre la operación <em>op</em>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Se recomienda usar el decorador anterior.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Se recomienda usar función <tt class="docutils literal">itertools.islice</tt> para
+avanzar un generador a la posición que quieres.</p>
+</div>
+<p><a class="reference external" href="potencia.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Define un decorador <tt class="docutils literal">memoize</tt> que añade <tt class="docutils literal">memoización</tt> a
+cualquier función. Esto significa, que para unos parámetros dados
+la función real sólo se ejecuta una vez, y el resto de veces
+consulta el resultado desde una tabla.</p>
+<p>Como no puedes meter un diccionario como clave en un diccionario,
+sólo se podrán decorar así funciones que no tengan parámetros por
+clave.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Crea un diccionario dentro del decorador, pero fuera de
+la función que implementa el envoltorio. Cada vez que se ejecute
+el envoltorio, comprueba si la tabla contiene alguna clave con
+los parámetros que ha recibido.</p>
+</div>
+<p><a class="reference external" href="memoize.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Define un decorador <tt class="docutils literal">memoizegen</tt> que decora un generador de tal
+forma que los valores del generador decorado se computan realmente
+sólo la primera vez que se itere sobre alguna instancia del
+generador, el resto de veces se sacan de una lista.</p>
+<p><a class="reference external" href="memoizegen.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gestion-de-recursos">
+<h1>Gestión de Recursos</h1>
+<ol class="arabic">
+<li><p class="first">Escribe un gestor de contexto <tt class="docutils literal">onexit (func)</tt> que ejecuta se
+asegura de que se ejecuta la función <tt class="docutils literal">func</tt> al salir del bloque.</p>
+<p><a class="reference external" href="onexit.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe un gestor de contexto <tt class="docutils literal">fastmap</tt> que al entrar en el
+bloque substituye la función <tt class="docutils literal">map</tt> por la versión de
+<tt class="docutils literal">itertools</tt> y al salir lo deja como estaba.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Para asignar a la variable global <tt class="docutils literal">map</tt> tienes que
+indicar <tt class="docutils literal">global map</tt> antes de hacer la asignación.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Si lo haces como en la pista anterior la substitución
+sólo afectará a las funciones del módulo actual, para que afecte
+globalmente, puedes asignar la función <tt class="docutils literal">imap</tt> en
+<tt class="docutils literal">__builtins__.map</tt>.</p>
+</div>
+<p><a class="reference external" href="fastmap.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

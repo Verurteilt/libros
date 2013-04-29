@@ -1,0 +1,20 @@
+7
+persona
+Pepito Grillo
+alumno
+Susana Ramirez
+4
+profesor
+Don Importante
+Semiótica Aplicada
+alumno
+Luis Diaz
+3
+alumno
+Luisa Petete
+2
+profesor
+Juan Sanchez
+Física Teórica
+persona
+Alguien Así

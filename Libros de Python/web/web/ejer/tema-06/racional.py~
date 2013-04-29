@@ -1,0 +1,94 @@
+# -*- coding: utf-8 -*-
+
+class Racional (object):
+    """
+    Clase que representa un número racional.
+
+    >>> Racional()
+    (0/1)
+    >>> Racional(3)
+    (3/1)
+    >>> Racional(3, 4)
+    (3/4)
+    """
+    
+    __slots__ = 'num', 'den'
+
+    def __init__ (self, num = 0, den = 1, *a, **k):
+        super (Racional, self).__init__ (*a, **k)
+        self.num = num
+        self.den = den
+
+    def __add__ (a, b):
+        """
+        Suma los racionales a y b
+
+        >>> Racional(3)+Racional(1)
+        (4/1)
+        >>> Racional(3,2)+Racional(1)
+        (5/2)
+        
+        """
+        return Racional (b.num + a.num, b.den) \
+               if b.den == a.den else \
+               Racional (b.num * a.den + a.num * b.den,
+                         b.den * a.den)
+
+    def __sub__ (a, b):
+        """
+        Resta los racionales a y b
+
+        >>> Racional(3)-Racional(1)
+        (2/1)
+        >>> Racional(3,2)-Racional(1)
+        (1/2)
+        """
+        return a + Racional (-1) * b
+
+    def __mul__ (a, b):
+        """
+        Multiplica los racionales a y b
+
+        >>> Racional(3)*Racional(1)
+        (3/1)
+        >>> Racional(3,2)*Racional(2)
+        (6/2)
+        """
+        return Racional (a.num * b.num,
+                         a.den * b.den)
+
+    def __div__ (a, b):
+        """
+        Multiplica los racionales a y b
+
+        >>> Racional(3)*Racional(1)
+        (3/1)
+        >>> Racional(3,2)*Racional(2)
+        (6/2)
+        """
+        return a * Racional (b.den, b.num)
+
+    def __str__ (self):
+        return '(%i/%i)' % (self.num, self.den)
+
+    def __repr__ (self):
+        return str (self)
+
+    def entero (self):
+        """
+        >>> Racional(3).entero
+        3
+        >>> Racional(3,2).entero
+        Traceback (most recent call last):
+          ...
+        ValueError: El Racional no es entero
+        """
+        q, r = divmod (self.num, self.den)
+        if r:
+            raise ValueError, "El Racional no es entero"
+        return q
+    entero = property (entero)
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod ()

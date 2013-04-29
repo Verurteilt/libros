@@ -1,0 +1,54 @@
+
+import pygtk
+pygtk.require('2.0')
+import gtk
+
+from math import sqrt
+from operator import add,sub,mul,div,pow
+
+import util
+
+opfns = {
+    '+' : add,
+    '-' : sub,
+    '*' : mul,
+    '/' : div,
+    '**' : pow,
+    'sqrt' : sqrt
+    }
+
+def handle_operation (entry, label):
+    ops = entry.props.text.split ()
+    try:
+        operador  = ops [0] 
+        operandos = ops [1:]
+        funcion = opfns [operador]
+        res = funcion (* map (float, operandos))
+        label.props.label = " = " + str (res)
+    except (KeyError, IndexError, ValueError, TypeError):
+        util.show_error_dialog ("Error", "Orden incorrecta")
+
+def calculadora ():
+    win = gtk.Window ()
+    win.connect ('destroy', gtk.main_quit)
+    win.props.title = "Super calculadora!"
+    win.props.allow_grow = False
+    
+    box = gtk.VBox (False, 0)
+    win.add (box)
+
+    label = gtk.Label (" = 0")
+    entry = gtk.Entry ()
+    entry.connect ("activate", handle_operation, label)
+    
+    box.pack_start (entry)
+    box.pack_start (label)
+
+    opfns ["exit"] = win.destroy
+    
+    win.show_all ()
+    gtk.main ()
+
+
+if __name__ == '__main__':
+    juego ()

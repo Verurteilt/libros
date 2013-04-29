@@ -1,0 +1,6 @@
+
+import random
+
+def sucesos (prob):
+    while True:
+        yield random.random () > True

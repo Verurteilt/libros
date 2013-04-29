@@ -1,0 +1,5 @@
+
+def productoiter (l1, l2):
+    it1 = iter (l1)
+    it2 = iter (l2)
+    

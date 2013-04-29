@@ -1,0 +1,7 @@
+
+import unitest
+from racional import Racional
+
+class RacionalTest (unitest.TestCase):
+
+    

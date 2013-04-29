@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-6-control-de-calidad"><em>Tema 6:</em> Control de calidad</h2>
+
+<div class="section" id="analsis-estatico">
+<h1>Análsis estático</h1>
+<ol class="arabic">
+<li><p class="first">Corrige el programa <a class="reference external" href="ugly.py.txt">ugly.py</a> para que pase todas
+las pruebas de PyLint sin pasar parámetros especiales por la linea
+de comandos, aunque se permite deshabilitar alguna opción mediante
+directivas. Además, el código tiene algunos problemas con casos
+esquina y de calidad del algoritmo, arréglalo para que funcione
+bien siempre e indique al usuario los errores por consola.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Mete el código en una función para que no se queje del
+uso de variables globales.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa una directiva <tt class="docutils literal">disable=W0402</tt> para evitar el
+<em>warning</em> por usar el módulo <tt class="docutils literal">string</tt>, que es apropiado usar.</p>
+</div>
+<p><a class="reference external" href="good.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Modifica el programa anterior para que pase los controles de
+PyChecker. También puedes usar alguna directiva dentro del código
+para deshabilitar cosas que no son erráticas.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">La directiva <cite>no-stringiter</cite> puede ser de utilidad.</p>
+</div>
+<p><a class="reference external" href="good.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="pruebas-de-unidad">
+<h1>Pruebas de unidad</h1>
+<ol class="arabic">
+<li><p class="first">Escribe algunas pruebas de unidad con <tt class="docutils literal">doctest</tt> para la clase
+<tt class="docutils literal">Racional</tt> que programamos en el tema de orientación a
+objetos. Recuerda que en la vida real, usaríamos la clase
+<a class="reference external" href="http://docs.python.org/library/fractions.html">Fractional</a>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Programar <tt class="docutils literal">__repr__</tt> será necesario para poder evaluar
+el estado del objeto de forma sencilla. No hace falta que el
+objeto sea sintácticamente Python, como tampoco lo es la
+representación por defecto.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Llama a los tests en <tt class="docutils literal">if __name__ == &quot;__main__&quot;</tt>.</p>
+</div>
+<p><a class="reference external" href="racional.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe algunas pruebas de unidad con <tt class="docutils literal">unittest</tt> para las clase
+<tt class="docutils literal">Racional</tt> anterior.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Si el fichero de la clase <tt class="docutils literal">Racional</tt> se llama
+<tt class="docutils literal">racional.py</tt>, llama al nuevo fichero <tt class="docutils literal">test_racional.py</tt> y
+crea otro fichero <tt class="docutils literal">runtests.py</tt> que ejecute este test y el de
+los siguientes ejercicios.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Importar las clases de pruebas en <tt class="docutils literal">runtests.py</tt> e
+invocar <tt class="docutils literal">unittest.main ()</tt> debe ser suficiente.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Para probar con <tt class="docutils literal">assertRaises</tt> que acceder a <tt class="docutils literal">entero</tt>
+tira una excepción en los casos que debe, envuelve el acceso al
+atributo en una <tt class="docutils literal">lambda</tt>. Esto es así porque esa aserción
+espera que le pases una función para ella ejecutarla
+controladamente y realizar la comprobación.</p>
+</div>
+<p><a class="reference external" href="test_racional.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe algunas pruebas de unidad con <tt class="docutils literal">unittest</tt> para alguna de
+las clases del ejercicio del tema de orientación a
+objetos. Usa un <em>mockup</em> del fichero para probar la entrada
+y salida. Un <em>mockup</em> es una clase que da una implementación
+ficticia de otro objeto lo suficientemente completa para probar el
+objeto que nos interesa. La clase <a class="reference external" href="http://docs.python.org/library/stringio.html">StringIO</a> es un <tt class="docutils literal">mockup</tt>
+sobradamente completo para este propósito.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Crea el <em>mockup</em> en el <em>fixture</em> del objeto.</p>
+</div>
+<p><a class="reference external" href="test_personas.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Juega con las pruebas de unidad anteriores desde la consola
+utilizando el método <tt class="docutils literal">TestCase.debug ()</tt>.</p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

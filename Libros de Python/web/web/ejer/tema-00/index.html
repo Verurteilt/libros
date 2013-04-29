@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-0-introduccion"><em>Tema 0:</em> Introducción</h2>
+
+<div class="section" id="repaso">
+<h1>Repaso</h1>
+<ol class="arabic">
+<li><p class="first">Escribe una función que reciba dos listas y devuelva una lista con
+los productos de los elementos de esas listas.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Itera sobre los índices y accede con <tt class="docutils literal">operador []</tt></p>
+</div>
+<p><a class="reference external" href="product.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe la función anterior, sin utilizar el
+<tt class="docutils literal">operador []</tt></p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Utiliza la función <tt class="docutils literal">zip ()</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que en un bucle <tt class="docutils literal">for</tt> se pueden
+desempaquetar tuplas: `` for a, b in ...``</p>
+</div>
+<p><a class="reference external" href="product2.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Compara el rendimiento de esta función con el de la solución con
+corchetes. ¿Cual de las dos es más rápida?</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Utilizar <tt class="docutils literal">%timeit</tt> de <em>IPython</em></p>
+</div>
+<p><a class="reference external" href="product3.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe una función que reciba una frase y
+devuelva <em>un a pareja</em> de un <cite>bool</cite> indicando si la frase es
+palíndromo, y un diccionario que asocie a cada palabra de la frase si
+ella misma es palíndromo o no.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Un palíndromo es una frase o una palabra que es
+igual leída hacia adelante o hacia atrás.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Realizar la comprobación de si una secuencia es simétrica
+cualesquiera que sea el tipo de sus contenidos en una función a
+parte.</p>
+</div>
+<p><a class="reference external" href="palindromo.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="modulos-y-documentacion">
+<h1>Módulos y documentación</h1>
+<ol class="arabic">
+<li><p class="first">Crea un paquete <cite>palin</cite> que contenga la función del ejercicio
+anterior, con un módulo <cite>liga.util</cite> que contenga la función del
+ejercicio 2. Si no has hecho las funciones anteriores aún, haz una
+implementación vacía que haga:</p>
+<pre class="literal-block">
+raise NotImplemented
+</pre>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que las funciones de un paquetes hay que
+ponerlas en el módulo especial <tt class="docutils literal">__init__</tt> dentro del paquete.</p>
+</div>
+<p><a class="reference external" href="palin.tar.gz">Solución</a></p>
+</li>
+<li><p class="first">Documenta las funciones anteriores. Comprueba el resultado con
+<tt class="docutils literal">pydoc</tt> y desde la consola.</p>
+<p><a class="reference external" href="palin.tar.gz">Solución</a></p>
+</li>
+<li><p class="first">Escribe una función <tt class="docutils literal">may_raise (objeto)</tt> que recibe como parámetro
+cualquier entidad del lenguaje devuelva <tt class="docutils literal">True</tt> si devuelve
+excepciones o <tt class="docutils literal">False</tt> si no basándose heurísticamente en lo que
+dice su documentación.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que puedes acceder a la documentación de un
+objeto a través de <tt class="docutils literal">__doc__</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Puedes probar heurísticamente simplemente buscando la
+cadena <tt class="docutils literal">:raise</tt> o <tt class="docutils literal">&#64;raise</tt> en el texto de la documentación.</p>
+</div>
+<p><a class="reference external" href="mayraise.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

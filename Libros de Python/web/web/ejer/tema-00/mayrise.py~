@@ -1,0 +1,5 @@
+
+def may_rise (obj):
+    return obj.__doc__.find (':rises') >= 0 or \
+           obj.__doc__.find ('@rises') >= 0
+

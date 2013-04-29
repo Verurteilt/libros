@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Curso de Python Avanzado</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="curso-de-python-avanzado">
+<h1 class="title">Curso de Python Avanzado</h1>
+
+<img alt="Logo de Python" class="align-right" src="python-logo.png" style="width: 450.75px; height: 152.25px;" />
+<div class="contents topic" id="id1">
+<p class="topic-title first"></p>
+<ul class="simple">
+<li><a class="reference internal" href="#informacion" id="id7">Información</a><ul>
+<li><a class="reference internal" href="#cuando" id="id8">¿Cuando?</a></li>
+<li><a class="reference internal" href="#donde" id="id9">¿Dónde?</a></li>
+<li><a class="reference internal" href="#tutorias" id="id10">Tutorías</a></li>
+<li><a class="reference internal" href="#pizarra-virtual" id="id11">Pizarra Virtual</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#requisitos" id="id12">Requisitos</a><ul>
+<li><a class="reference internal" href="#maquina-virtual" id="id13">Máquina virtual</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contenidos" id="id14">Contenidos</a><ul>
+<li><a class="reference internal" href="#bloque-0-el-lenguaje-en-profundidad" id="id15"><em>Bloque 0:</em> El lenguaje en profundidad</a><ul>
+<li><a class="reference internal" href="#materiales" id="id16">Materiales</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bloque-1-interfaces-graficas" id="id17"><em>Bloque 1:</em> Interfaces Gráficas</a><ul>
+<li><a class="reference internal" href="#id2" id="id18">Materiales</a></li>
+<li><a class="reference internal" href="#id3" id="id19">Requisitos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bloque-2-produccion-de-software" id="id20"><em>Bloque 2:</em> Producción de Software</a><ul>
+<li><a class="reference internal" href="#id4" id="id21">Materiales</a></li>
+<li><a class="reference internal" href="#id5" id="id22">Requisitos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bloque-3-sistemas-web" id="id23"><em>Bloque 3:</em> Sistemas Web</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#material-adicional" id="id24">Material adicional</a><ul>
+<li><a class="reference internal" href="#configuracion-de-emacs" id="id25">Configuración de Emacs</a><ul>
+<li><a class="reference internal" href="#integracion-de-ipython" id="id26">Integración de IPython</a></li>
+<li><a class="reference internal" href="#integracion-de-pyflakes" id="id27">Integración de PyFlakes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><a class="reference external" href="web.tar.gz">Descargar todo el contenido completo</a></p>
+<div class="section" id="informacion">
+<h1><a class="toc-backref" href="#id7">Información</a></h1>
+<p>Este <em>Curso en Python Avanzado</em> pretende completar el contenido del
+<a class="reference external" href="http://www.iaa.es/python">Curso de Iniciación</a>, introduciendo
+técnicas más complejas y enfatizando en las buenas prácticas para la
+construcción de software orientado a la producción.</p>
+<div class="section" id="cuando">
+<h2><a class="toc-backref" href="#id8">¿Cuando?</a></h2>
+<p>Todos los días del <strong>9 al 14 de Mayo</strong>, de 9 a 14:30 de la mañana. 25
+horas en total.</p>
+</div>
+<div class="section" id="donde">
+<h2><a class="toc-backref" href="#id9">¿Dónde?</a></h2>
+<p>En la sala de juntas del <a class="reference external" href="http://www.iaa.es">Instituto Andaluz de Astrofísica</a>.</p>
+</div>
+<div class="section" id="tutorias">
+<h2><a class="toc-backref" href="#id10">Tutorías</a></h2>
+<p>Podéis realizar consultas sobre los contenidos del curso al profesor
+en su dirección de correo electrónico: <strong>raskolnikov&#64;gnu.org</strong></p>
+</div>
+<div class="section" id="pizarra-virtual">
+<h2><a class="toc-backref" href="#id11">Pizarra Virtual</a></h2>
+<p>Vamos utilizar una pizarra virtual online para facilitar la
+interacción en la corrección de ejercicios.</p>
+<p><a class="reference external" href="http://piratepad.net/iaa-python-avanzado">Accede aquí a la pizarra virtual</a></p>
+</div>
+</div>
+<div class="section" id="requisitos">
+<h1><a class="toc-backref" href="#id12">Requisitos</a></h1>
+<p>Para realizar el curso es recomendable utilizar un ordenador para
+seguir los ejemplos y ejercicios.</p>
+<p>Especialmente durante el cuarto día de clase será necesario utilizar
+<strong>una distribución basada en</strong> <a class="reference external" href="http://www.debian.org">Debian</a> , como <a class="reference external" href="http://www.ubuntu.com">Ubuntu</a> o la
+completamente libre <a class="reference external" href="http://www.trisquel.info">Trisquel</a>.</p>
+<div class="section" id="maquina-virtual">
+<h2><a class="toc-backref" href="#id13">Máquina virtual</a></h2>
+<p>Si no disponéis de una distribución de GNU/Linux basada en Debian lo
+más fácil es que os instaléis la máquina virtual basada en <a class="reference external" href="http://www.virtualbox.org">VirtualBox</a>
+que hemos preparado.</p>
+<p>Os podéis <a class="reference external" href="http://www.iaa.es/python/avanzado">descargar la máquina virtual aquí</a>. Las instrucciones para
+instalarla las podéis encontrar en la web del <a class="reference external" href="http://www.iaa.es/python">Curso de Iniciación</a>.</p>
+</div>
+</div>
+<div class="section" id="contenidos">
+<h1><a class="toc-backref" href="#id14">Contenidos</a></h1>
+<div class="section" id="bloque-0-el-lenguaje-en-profundidad">
+<h2><a class="toc-backref" href="#id15"><em>Bloque 0:</em> El lenguaje en profundidad</a></h2>
+<div class="section" id="materiales">
+<h3><a class="toc-backref" href="#id16">Materiales</a></h3>
+<ul class="simple">
+<li><em>Tema 0:</em> Introducción<ul>
+<li><a class="reference external" href="slides/tema-00.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-00.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-00/index.html">Ejercicios</a></li>
+</ul>
+</li>
+<li><em>Tema 1:</em> Programación Funcional<ul>
+<li><a class="reference external" href="slides/tema-01.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-01.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-01/index.html">Ejercicios</a></li>
+</ul>
+</li>
+<li><em>Tema 2:</em> Orientación a Objetos<ul>
+<li><a class="reference external" href="slides/tema-02.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-02.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-02/index.html">Ejercicios</a></li>
+</ul>
+</li>
+<li><em>Tema 3:</em> Cuestiones Avanzadas<ul>
+<li><a class="reference external" href="slides/tema-03.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-03.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-03/index.html">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="bloque-1-interfaces-graficas">
+<h2><a class="toc-backref" href="#id17"><em>Bloque 1:</em> Interfaces Gráficas</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id18">Materiales</a></h3>
+<ul class="simple">
+<li><em>Tema 4:</em> Introducción a GTK<ul>
+<li><a class="reference external" href="slides/tema-04.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-04.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-04/index.html">Ejercicios</a></li>
+</ul>
+</li>
+<li><em>Tema 5:</em> Diseñando aplicaciones con Glade<ul>
+<li><a class="reference external" href="slides/tema-05.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-05.tar.bz2">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-05/index.html">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id19">Requisitos</a></h3>
+<p>Para este tema hacen falta <a class="reference external" href="http://glade.gnome.org/">Glade</a>, <a class="reference external" href="http://www.gtk.org/">GTK</a> y sus <em>bindings</em> para Python,
+<a class="reference external" href="http://www.pygtk.org/">PyGTK</a>. Se pueden instalar en un sistema basado en Debian con el
+comando:</p>
+<pre class="literal-block">
+sudo apt-get install python-gtk2-dev glade
+</pre>
+<p>Si usáis el entorno Gnome, es mejor instalar:</p>
+<pre class="literal-block">
+sudo apt-get install glade-gnome
+</pre>
+<p>Este software está preinstalado en la máquina virtual que se describe
+más arriba.</p>
+</div>
+</div>
+<div class="section" id="bloque-2-produccion-de-software">
+<h2><a class="toc-backref" href="#id20"><em>Bloque 2:</em> Producción de Software</a></h2>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id21">Materiales</a></h3>
+<ul class="simple">
+<li><em>Tema 6:</em> Pruebas de calidad<ul>
+<li><a class="reference external" href="slides/tema-06.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-06.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-06/index.html">Ejercicios</a></li>
+</ul>
+</li>
+<li><em>Tema 7:</em> Bibliotecas externas<ul>
+<li><a class="reference external" href="slides/tema-07.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-07.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-07/index.html">Ejercicios</a></li>
+</ul>
+</li>
+<li><em>Tema 8:</em> Distribución del software<ul>
+<li><a class="reference external" href="slides/tema-08.pdf">Diapositivas (PDF)</a></li>
+<li><a class="reference external" href="code/tema-08.tar.gz">Código y Ejemplos (tar.gz)</a></li>
+<li><a class="reference external" href="ejer/tema-08/index.html">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id22">Requisitos</a></h3>
+<p>En este bloque es necesario el software <a class="reference external" href="https://launchpad.net/pyflakes">PyFlakes</a>, <a class="reference external" href="http://www.logilab.org/857">PyLint</a> y
+<a class="reference external" href="http://pychecker.sourceforge.net/">PyChecker</a>, en el tema 6. Además, hace falta el
+compilador <a class="reference external" href="http://gcc.gnu.org/">GCC</a> en tema 7. En el tema 8 es necesario <a class="reference external" href="https://github.com/astraw/stdeb">Stdeb</a> y
+<a class="reference external" href="http://pypi.python.org/pypi/setuptools">Setuptools</a>.</p>
+<p>Todo esto puede instalarse en una distribución basada en Debian con el
+comando:</p>
+<pre class="literal-block">
+$ sudo apt-get install pyflakes pylint pychecker build-essential \
+                       python-stdeb python-setuptools
+</pre>
+</div>
+</div>
+<div class="section" id="bloque-3-sistemas-web">
+<h2><a class="toc-backref" href="#id23"><em>Bloque 3:</em> Sistemas Web</a></h2>
+<p>Para este bloque, que finalmente no dio tiempo a dar, no llegamos a
+preparar materiales específicos. Sin embargo, os dejo los siguientes
+enlaces y materiales que pueden ser útiles para guiar vuestro estudio.</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="http://django.es/blog/diapositivas-curso-introduccion-django/">Diapositivas de curso de introducción a Django</a></p>
+<p>Estas diapositivas son de un curso de introducción a Django que
+cubre todo y más de lo que pensábamos dar en nuestro curso. Buena
+parte de las diapositivas están organizadas a modo de tutorial y
+puede ser útil seguirlas paso a paso para realizar una primera
+aproximación a Django.</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://docs.djangoproject.com/en/1.3/">Documentación oficial de Django</a></p>
+<p>La documentación oficial de Django es muy extensiva. A parte de la
+documentación de referencia, es muy recomendable <a class="reference external" href="http://docs.djangoproject.com/en/1.3/intro/tutorial01/">seguir el
+tutorial</a> paso a
+paso para realizar una primera incursión en el sistema.</p>
+</li>
+<li><p class="first"><a class="reference external" href="code/yaas.tar.gz">Código fuente del proyecto YAAS</a></p>
+<p>El año pasado programé el proyecto <em>Yet Another Auction Service</em>
+como parte de un curso de desarrollo web. Es una página de subastas
+muy sencilla, que puede servir de ejemplo. Como apuntes
+interesantes, tiene una API web basada en <a class="reference external" href="http://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a>,
+pruebas de unidad usando el sistema específico de Django y presenta
+gráficas usando Matplotlib.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="material-adicional">
+<h1><a class="toc-backref" href="#id24">Material adicional</a></h1>
+<div class="section" id="configuracion-de-emacs">
+<h2><a class="toc-backref" href="#id25">Configuración de Emacs</a></h2>
+<p>A algunos alumnos os ha gustado las facilidades que ofrece <a class="reference external" href="http://www.gnu.org/software/emacs">Emacs</a> el
+como editor de Python. Os indico aquí los trucos especiales de nuestra
+configuración configuración personal de <a class="reference external" href="http://www.gnu.org/software/emacs">Emacs</a>.</p>
+<div class="section" id="integracion-de-ipython">
+<h3><a class="toc-backref" href="#id26">Integración de IPython</a></h3>
+<p>Lo primero que necesitáis es el <tt class="docutils literal"><span class="pre">python-mode</span></tt> avanzado mantenido por
+la comunidad de Emacs, que sustituye al que viene por defecto con el
+paquete. El módulo <tt class="docutils literal">pymacs</tt> además permite extender Emacs en lenguaje
+de programación Python. Los instalamos en Debian y derivados con:</p>
+<pre class="literal-block">
+$ sudo apt-get install pymacs python-mode ipython
+</pre>
+<p>Para integrar <a class="reference external" href="http://ipython.scipy.org/">IPython</a> correctamente es necesario un módulo adicional
+para Emacs, que podéis descargar aquí: <a class="reference external" href="ipython.el">ipython.el</a></p>
+<p>Una vez hecho esto, debéis indicar a Emacs la carpeta dónde tenéis
+instalado el módulo y que lo cargue. Por ejemplo, yo lo tengo
+instalado en <tt class="docutils literal"><span class="pre">~/.emacs.d/lisp/ipython.el</span></tt>, y mi fichero de
+configuración de Emacs <tt class="docutils literal"><span class="pre">~/.emacs</span></tt> incluye estas lineas:</p>
+<pre class="literal-block">
+(add-to-list 'load-path (expand-file-name &quot;~/.emacs.d/lisp&quot;))
+
+(require 'ipython)
+</pre>
+<p>Una vez hecho esto, ya podéis lanzar el intérprete IPython dentro de
+Emacs ejecutando <tt class="docutils literal"><span class="pre">M-x</span> <span class="pre">py-shell</span></tt> o directamente con <tt class="docutils literal"><span class="pre">C-c</span> !</tt>. Cuando
+está abierta, podéis enviar el fichero de Python actual entero al
+intérprete de Python ejecutando <tt class="docutils literal"><span class="pre">C-c</span> <span class="pre">C-c</span></tt>. Además, mi fichero de
+configuración de Emacs contiene:</p>
+<pre class="literal-block">
+(eval-after-load &quot;python-mode&quot;
+'(progn
+   (add-hook 'python-mode-hook
+             (lambda ()
+               (local-set-key (kbd &quot;C-c C-e&quot;) 'py-execute-region)))))
+</pre>
+<p>Una vez configurado así Emacs permite enviar al intérprete sólo la
+región seleccionada actualmente con el comando <tt class="docutils literal"><span class="pre">C-c</span> <span class="pre">C-e</span></tt>.</p>
+</div>
+<div class="section" id="integracion-de-pyflakes">
+<h3><a class="toc-backref" href="#id27">Integración de PyFlakes</a></h3>
+<p>Como veremos en el tema 7 del curso, el programa <a class="reference external" href="https://launchpad.net/pyflakes">PyFlakes</a> permite
+realizar algunas comprobaciones de errores de programación en Python,
+como comprobar que las variables que usamos han sido declaradas, o que
+los <cite>import</cite> que realizamos se usan realmente en el código.</p>
+<p>Podemos hacer que Emacs muestre automáticamente en rojo las lineas
+erróneas detectadas por <a class="reference external" href="https://launchpad.net/pyflakes">PyFlakes</a> integrándolo con el módulo
+<tt class="docutils literal">flymake</tt>, que viene de serie con Emacs desde su versión 23. En
+concreto, las lineas de configuración necesarias son:</p>
+<pre class="literal-block">
+(require 'flymake)
+
+(defun flymake-pyflakes-init ()
+  ;; Make sure it's not a remote buffer or flymake would not work
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                   'flymake-create-temp-inplace))
+       (local-file (file-relative-name
+                    temp-file
+                    (file-name-directory buffer-file-name))))
+    (list &quot;pyflakes&quot; (list local-file))))
+
+(setq flymake-allowed-file-name-masks '((&quot;\\.py\\'&quot;  flymake-pyflakes-init)))
+</pre>
+<p>FlyMake es una herramienta muy potente, nos permite además integrar el
+resaltado de errores en muchos otros formatos, como LaTeX, o incluso
+otros compilados como C. Tenéis <a class="reference external" href="http://www.emacswiki.org/emacs/FlyMake">más información aquí</a>.</p>
+<p>Parece que FlyMake no se lleva muy bien con IPython, pero las
+siguientes lineas de configuración solucionan el problema:</p>
+<pre class="literal-block">
+(add-hook 'python-mode-hook
+        (lambda ()
+          (unless (eq buffer-file-name nil) (flymake-mode t))))
+</pre>
+<p>¡A disfrutar programando en Python con Emacs!</p>
+<hr class="docutils" />
+<p><em>(c) Juan Pedro Bolívar Puente 2011</em> — <a class="reference external" href="index.rst">Código fuente ReStructuredText</a></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

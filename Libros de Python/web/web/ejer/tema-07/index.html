@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-7-interfaces-software"><em>Tema 7:</em> Interfaces software</h2>
+
+<div class="section" id="ctypes">
+<h1>Ctypes</h1>
+<ol class="arabic">
+<li><p class="first">Realiza en C o Fortran una función que calcula el máximo común
+divisor de dos números. Utiliza el sencillo Algoritmo de Euclides,
+e implementa una interfaz con Ctypes. El código en C que puedes
+utilizar es este:</p>
+<pre class="literal-block">
+int mcd (int a, int b)
+{
+  if (a &lt; 0)
+    a = -a;
+  if (b &lt; 0)
+    b = -b;
+
+  a = a % b;
+  if (a &gt; 0)
+    return mcd (b, a);
+  else
+    return b;
+}
+</pre>
+<p><a class="reference external" href="mcd.tar.gz">Solución</a></p>
+</li>
+<li><p class="first">Implementa una clase <tt class="docutils literal">MyArray</tt> que es un vector de enteros que
+utiliza C para manejar los datos. La clase debe reservar la memoria
+con <tt class="docutils literal">malloc</tt> de la biblioteca estándar y liberarlo con
+<tt class="docutils literal">free</tt>. La liberación de la memoria debe ser transparente al
+usuario. La clase puede proveer un método <tt class="docutils literal">zero</tt> que pone a 0
+todos los datos usando <tt class="docutils literal">memset</tt>. Puedes hacerla usando los
+envoltorios de <tt class="docutils literal">numpy</tt> o los estándar de <tt class="docutils literal">ctypes</tt>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Reserva la memoria en el constructor y libera la memoria
+en el finalizador de la clase, es decir, <tt class="docutils literal">__del__</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Es posible que en tu implementación tengas que utilizar
+casting de C desde Python (por ejemplo, para convertir entre
+<tt class="docutils literal">void*</tt> e <tt class="docutils literal">int*</tt>), puedes utilizar la función
+<tt class="docutils literal">ctypes.cast(valor, tipo_destino)</tt>.</p>
+</div>
+<p><a class="reference external" href="myarray.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="numpy">
+<h1>Numpy</h1>
+<ol class="arabic">
+<li><p class="first">Programa en C o Fortran una función que calcula la norma de un
+vector de <tt class="docutils literal">float</tt> de <tt class="docutils literal">n</tt> componentes. Realiza una interfaz con
+<tt class="docutils literal">ctypes</tt> y <tt class="docutils literal">numpy</tt> para utilizarla en Python. La función en C
+puede ser algo así:</p>
+<pre class="literal-block">
+float norm (float* data, size_t size)
+{
+  float* end = data + size;
+  float  res = 0;
+
+  while (data &lt; end)
+    {
+      res += *data * *data;
+      ++ data;
+    }
+
+  return sqrtf (res);
+}
+</pre>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Crea una función que envuelva la llamada a la biblioteca
+en C para extraer el tamaño del <tt class="docutils literal">array</tt> y pasarlo al segundo
+argumento.</p>
+</div>
+<p><a class="reference external" href="norm.tar.gz">Solución</a></p>
+</li>
+<li><p class="first">Escribe una función que ordene un <tt class="docutils literal">array</tt> unidimensional de
+<tt class="docutils literal">numpy</tt> utilizando la función <tt class="docutils literal">qsort ()</tt> de C. La función debe
+funcionar para cualquier tipo de datos.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Tienes que definir el tipo de la función comparadora
+dentro de un envoltorio que de la función <tt class="docutils literal">qsort</tt> para poder
+adaptarla al tipo del <tt class="docutils literal">array</tt> en concreto.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">La función <tt class="docutils literal">numpy.ctypeslib.as_ctypes</tt> puede ser de
+utilidad. El tipo del objeto que devuelve no puede ser usado
+directamente en una signatura de <em>ctypes</em>, pero podemos acceder
+al tipo de los objetos apuntados a través del atributo
+<tt class="docutils literal">_type_</tt>.</p>
+</div>
+<p><a class="reference external" href="sort.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

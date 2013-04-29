@@ -1,0 +1,10 @@
+
+def memoize (fn):
+    table = {}
+    def envoltorio (*a, **k):
+        try:
+            return table [(a, k)]
+        except KeyError:
+            res = fn (*a, **k)
+            table [(a, k)] = res
+            return res

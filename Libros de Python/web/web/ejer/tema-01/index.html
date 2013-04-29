@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>Ejercicios</title>
+<style type="text/css">
+
+/* 
+This CSS file is available under the terms of the GNU Free
+Documentation License:
+http://www.gnu.org/licenses/fdl.html
+*/
+
+/* All HTML elements with this class will be center-aligned */
+.center{
+	text-align: center
+}
+
+/* Used in order to tabulate the text in the site map section */
+.sect1{
+	text-indent: 35px
+}
+
+.sect2{
+	text-indent: 70px
+}
+
+.hint {
+    color: #ffffff;
+}
+
+.admonition-title {
+    color: #000;
+    font-style: italic;
+}
+
+/* 
+#527bbd is the same color that Dr Stephen Blott uses on his personal web page:
+http://www.computing.dcu.ie/~sblott/ 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #527bbd;
+  font-family: helvetica, "lucida console", sans-serif;
+  margin-top: 2%;
+  text-decoration: none;
+}
+
+.justify {
+	text-align: justify
+}
+
+/* Sets the background color of the table used to quote text */
+
+.quote {
+	background-color:#FFFFFF;
+}
+
+body {
+  margin: 1em 3% 1em 3%;
+  font-family: helvetica, "lucida console", sans-serif;
+  max-width: 700px;
+}
+
+a {
+  color: #002BB8; /* Same link color that is used by Wikipedia */
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Seen here: http://www.devlounge.net/design/aligning-images-the-right-way-using-css */
+
+.align-right { float:right; margin: 0 0 15px 15px; }
+.align-left { float:left; margin: 0 15px 15px 0; }
+.frame { padding: 5px; border: 1px solid #aaa; } 
+
+
+.w3frame { border: 0px; }
+
+hr {
+border: 0;
+width: 100%;
+}
+
+hr.docutils {
+border-top: 1px dashed gray;
+color: white;
+background-color: white;
+height: 1px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="ejercicios">
+<h1 class="title">Ejercicios</h1>
+<h2 class="subtitle" id="tema-1-programacion-funcional"><em>Tema 1:</em> Programación Funcional</h2>
+
+<div class="section" id="funciones-como-valores">
+<h1>Funciones como valores</h1>
+<ol class="arabic">
+<li><p class="first">Implementa una función <tt class="docutils literal">flip (fn)</tt> recibe una función binaria
+<tt class="docutils literal">fn</tt> que devuelve otra función igual que <tt class="docutils literal">fn</tt> pero con los
+parámetros intercambiados.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Define una función dentro de la función <tt class="docutils literal">flip</tt> que
+invoca a <tt class="docutils literal">fn</tt> con los parámetros en orden inverso.</p>
+</div>
+<p><a class="reference external" href="flip.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa una función <tt class="docutils literal">trace (fn)</tt> que recibe una función <tt class="docutils literal">fn</tt>
+y devuelve otra que hace lo mismo que <tt class="docutils literal">fn</tt> pero antes de
+ejecutarla escribe por pantalla: <tt class="docutils literal">Ejecutando &quot;fn
+<span class="pre">(...)&quot;</span></tt>. Idealmente, en los <cite>...</cite> aparecen los parámetros con los
+que ha sido ejecutada.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que puedes acceder al nombre de una función con
+<tt class="docutils literal">fn.__name__</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Define una función dentro de la función <tt class="docutils literal">trace</tt> que
+es la que imprime el nombre de la función y la ejecuta.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Esa función recibe un número variable de parámetros y se
+los pasa idénticos a <tt class="docutils literal">fn</tt>.</p>
+</div>
+<p><a class="reference external" href="trace.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa una función <tt class="docutils literal">compose (f1, f2, <span class="pre">...,</span> fn)</tt> que devuelve una
+nueva función equivalente a la composición <em>f1 · f2 · ... · fn</em>
+matemática, sean <em>fi</em> funciones unarias. Es decir, sea:</p>
+<pre class="literal-block">
+f = compose (f1, f2, ..., fn)
+</pre>
+<p>Se cumple para todo <em>x</em> que:</p>
+<pre class="literal-block">
+f (x) == f1 (f2 (... fn (x)))
+</pre>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recoge las funciones como una lista.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Itera sobre las funciones de atrás hacia adelante
+aplicándolas sucesivamente <tt class="docutils literal">reversed</tt> o <tt class="docutils literal"><span class="pre">lista[::-1]</span></tt>.</p>
+</div>
+<p><a class="reference external" href="compose1.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="funciones-de-alto-orden">
+<h1>Funciones de alto orden</h1>
+<ol class="arabic">
+<li><p class="first">Implementa la famosa función que aplicada sobre dos listas devuelve
+otra lista con los productos de cada par de números. Es decir, como
+la de la relación anterior, pero sin usar bucles.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa la función <tt class="docutils literal">map</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Mezcla las dos listas con la función <tt class="docutils literal">zip</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa <tt class="docutils literal">operator.mul</tt> para mayor eficiencia.</p>
+</div>
+<p><a class="reference external" href="product.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe una función que compruebe si una lista contiene algún
+número impar, sin utilizar bucles.</p>
+<p><a class="reference external" href="tieneimpar.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe una función <cite>intersec (l1, l2)</cite> que dadas dos listas
+devuelve otra con los elementos que están en las dos, sin utilizar
+<tt class="docutils literal">set</tt> ni bucles <tt class="docutils literal">for</tt>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa la función <tt class="docutils literal">filter</tt></p>
+</div>
+<p><a class="reference external" href="intersec.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Implementa la función <tt class="docutils literal">compose</tt> anterior sin utilizar bucles
+<cite>for</cite>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Utiliza la función <tt class="docutils literal">reduce</tt>.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Pasa como valor inicial a la función <tt class="docutils literal">reduce</tt> el
+valor <tt class="docutils literal">x</tt>, la función de reducción recibe por la izquierda el
+valor que se está reduciendo y por la derecha la siguiente
+función de la lista.</p>
+</div>
+<p><a class="reference external" href="compose2.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe una calculadora por consola en notación polaca (notación
+prefijo) que efectúe las operaciones suma, resta, multiplicación,
+división, exponenciación.</p>
+<p>Ejemplo de sesión con el programa:</p>
+<pre class="literal-block">
+Operación: + 3 2
+Resultado: 5
+Operación: / 4 2
+Resultado: 2
+...
+</pre>
+<p>La entrada basta que la hagas con <tt class="docutils literal">raw_input</tt>, pero si te sobra
+tiempo echale un vistazo al módulo <a class="reference external" href="http://docs.python.org/library/readline.html">readline</a></p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa un diccionario que asocie cada operación con la
+función que la ejecuta.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Haz un bucle que llama a <tt class="docutils literal">raw_input</tt>. Extrae de la
+cadena la operación y los parámetros.</p>
+</div>
+<p><a class="reference external" href="calcu.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Añade al programa anterior una función <tt class="docutils literal">exit</tt> sin parámetros y otra
+función <tt class="docutils literal">sqrt</tt> que hace la raiz cuadrada de un número.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p>Para comprobar que el número de parámetros es correcto,
+guarda en el diccionario tuplas <em>(funcion, numero de
+argumentos)</em> en vez de sólo la función. Otra opción más general
+es usarndo:</p>
+<pre class="literal-block">
+nargs = len (inspect.getargspp (fn).args)
+</pre>
+<p class="last">Otra opción más general, aunque hay que tener cuidado, es
+capturar el <cite>TypeError</cite> que lanza invocar una operación con
+número incorrecto de parámetros.</p>
+</div>
+<p><a class="reference external" href="calcu.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe una función que lea un fichero de esta forma:</p>
+<pre class="literal-block">
+equipo-1 0 0 0 3 0 0
+equipo-2 0 1 0 0 0 1 3
+</pre>
+<p>Es decir, cada linea empieza por el identificador de un equipo de
+futbol, sin espacios, y le sigue una lista de números con los
+puntos que obtenido en los sucesivos partidos de la liga.</p>
+<p>Queremos calcular el resultado de la liga. El programa debe
+producir una salida de la forma:</p>
+<pre class="literal-block">
+equipo-2 5
+equipo-1 3
+</pre>
+<p>En el que cada linea empieza por el identificador de un equipo y tras
+cuantos espacios quiera le sigue el total de puntos que ha obtenido.
+correspondiente. El fichero de salida tiene que estar ordenado de
+mayor a menor. Aquí tienes un <a class="reference external" href="result-liga.txt">fichero de prueba</a>.</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Lee el fichero con <tt class="docutils literal">file.readlines ()</tt> y separa los
+campos de cada linea con la función <tt class="docutils literal">str.split ()</tt></p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recuerda que puedes ordenar con la función
+<tt class="docutils literal">list.sort()</tt>. Pasale una <tt class="docutils literal">lambda</tt> al parámetro <tt class="docutils literal">key</tt>.</p>
+</div>
+<p><a class="reference external" href="liga.py.txt">Solución</a></p>
+</li>
+<li><p class="first">Escribe tres funciones con el comportamiento de la función
+<tt class="docutils literal">reduce</tt>, <tt class="docutils literal">map</tt> y <tt class="docutils literal">filter</tt> respectivamente sin usar bucles
+<tt class="docutils literal">for</tt> ni listas por comprensión.</p>
+<p>Esta es la implementación típica en un lenguaje funcional, pero es
+ineficiente a no ser que usemos las herramientas que veremos en el
+tema 3, ¿por qué?</p>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Usa recursividad.</p>
+</div>
+<div class="hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">En cada iteración procesa <tt class="docutils literal">lista[0]</tt> y pasa
+<tt class="docutils literal">lista[1:]</tt> a la siguiente iteración hasta que esté
+vacía.</p>
+</div>
+<p><a class="reference external" href="funcional.py.txt">Solución</a></p>
+</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+
+def product1 (lista1, lista2):
+    map (lambda (a, b): a*b, zip (lista1, lista2))
+
+def product2 (lista1, lista2):
+    [ a*b for a,b in zip (lista1, lista2) ]

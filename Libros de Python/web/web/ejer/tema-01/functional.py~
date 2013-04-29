@@ -1,0 +1,5 @@
+
+def mymap (fn, lista):
+    if not lista:
+        return []
+    return [fn (lista [0])] + mymap ()

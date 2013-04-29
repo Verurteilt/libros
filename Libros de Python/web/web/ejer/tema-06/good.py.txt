@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+"""
+
+  Codifica y decodifica en codigicación Caesar.
+
+"""
+
+import operator
+
+__pychecker__='no-stringiter'
+# pylint: disable=W0402
+
+import string 
+
+def main ():
+
+    """
+    Programa principal.
+    """
+    
+    try:
+        letters = string.ascii_letters + \
+                  string.punctuation + \
+                  string.digits
+        shift   = 3
+        
+        choice  = raw_input("Want to encode or decode?: ")
+        options = { 'encode' : operator.add,
+                    'decode' : operator.sub }
+        oper = options [choice]
+        
+        word = (raw_input("Enter the text: "))
+        
+        encoded = ''.join (
+            x if x.isspace () else
+            letters [oper (letters.index(x), shift) %
+                     len (letters)]
+            for x in word)
+        print encoded
+
+    except KeyError:
+        print "Wrong option"
+    except ValueError:
+        print "Wrong input"
+
+if __name__ == '__main__':
+    main ()
